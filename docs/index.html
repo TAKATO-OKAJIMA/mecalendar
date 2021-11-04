@@ -3,7 +3,8 @@
     <head>
         <title>MeCalendar</title>
         <meta charset="utf-8"/>
-        <link rel="stylesheet" href="./styles/main.min.css">
+        <link rel="stylesheet" href="./styles/fullcalendarmain.min.css">
+        <link rel="stylesheet" href="./styles/bootstrap.min.css">
         <style>
             .fc-col-header-cell.fc-day.fc-day-sun {
                 color: red;
@@ -14,6 +15,9 @@
         </style>
         <script src="./scripts/fullcalendar/main.min.js"></script>
         <script src="./scripts/fullcalendar/locales-all.min.js"></script>
+        <script src="./scripts/jquery-3.5.1.min.js"></script>
+        <script src="./scripts/bootstrap/bootstrap.min.js"></script>
+        <script src="./scripts/bootstrap/bootstrap.bundle.min.js"></script>
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', () => {
                 const nowDay = new Date();
@@ -50,8 +54,20 @@
         </script>
     </head>
     <body>
-        <div class="calender-container">
-            <div id="calendar"></div>
+        <nav class="navbar navbar-light" style="background-color: #1e2b37;">
+            <a class="navbar-brand" style="color: white;">MeCalendar</a>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4>WorkTime: (9:00~10:00)-(18:00~19:00)</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="calendar"></div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
