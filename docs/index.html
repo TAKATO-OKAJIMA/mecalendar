@@ -1,28 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
     <head>
         <title>MeCalendar</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" href="./styles/main.min.css">
+        <style>
+            .fc-col-header-cell.fc-day.fc-day-sun {
+                color: red;
+            }
+            .fc-col-header-cell.fc-day.fc-day-sat {
+                color: blue;
+            }
+        </style>
         <script src="./scripts/fullcalendar/main.min.js"></script>
         <script src="./scripts/fullcalendar/locales-all.min.js"></script>
         <script type="text/javascript">
             document.addEventListener('DOMContentLoaded', () => {
                 const nowDay = new Date();
 
-                var calendarElement = document.getElementById('calendar');
-                var calendar = new FullCalendar.Calendar(calendarElement, {
+                const calendarElement = document.getElementById('calendar');
+                const calendar = new FullCalendar.Calendar(calendarElement, {
                     initialView: 'dayGridMonth',
                     headerToolbar: {
                         left: 'prevYear,prev,next,nextYear today',
                         center: 'title',
-                        right: 'dayGridMonth,dayGridWeek,dayGridDay'
+                        right: 'dayGridMonth,dayGridWeek,dayGridDay,listMonth'
                     },
+                    locale: 'ja',
                     initialDate: nowDay,
                     navLinks: true,
-                    editable: true,
+                    editable: false,
                     dayMaxEvents: true,
-                    locale: 'ja',
+                    businessHours: true,
                     events: [
                         {
                             title: 'M',
@@ -41,6 +50,8 @@
         </script>
     </head>
     <body>
-        <div id="calendar"></div>
+        <div class="calender-container">
+            <div id="calendar"></div>
+        </div>
     </body>
 </html>
